@@ -1,4 +1,4 @@
-const {Model,  DataTypes } = require('sequelize');
+const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 class Prodacts extends Model {}
@@ -6,7 +6,7 @@ class Prodacts extends Model {}
 Prodacts.init(
   {
     id: {
-      type: DataTypes.INTEGER,
+     type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
@@ -23,7 +23,7 @@ Prodacts.init(
       },
   
     stack: {
-      type: DataTypes.INTEGER,
+      type:DataTypes.INTEGER,
       allowNull: false,
       },
   
