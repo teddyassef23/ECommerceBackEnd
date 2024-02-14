@@ -13,7 +13,7 @@ Prodacts.init(
     },
 
     prodact_name: {
-      type : DataTypes.stringify,
+      type : DataTypes.STRING,
       allowNull: false,
     },
 

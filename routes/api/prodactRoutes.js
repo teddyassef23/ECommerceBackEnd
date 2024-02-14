@@ -1,13 +1,13 @@
 const router = require('express').Router();
 // use object destructuring to import our two models by name
-const { prodact, prodact } = require('../../models/index');
+const { prodacts } = require('../../model');
 
 // GET all prodact
 router.get('/', async (req, res) => {
   try {
    
     const prodactData = await prodact.findAll({
-      include: [{ model: prodact }],
+      include: [{ model: prodacts }],
     });
     res.status(200).json(prodactData);
   } catch (err) {
@@ -18,8 +18,8 @@ router.get('/', async (req, res) => {
 // GET a single prodact by prodact ID
 router.get('/:id', async (req, res) => {
   try {
-    const prodactData = await prodact.findByPk(req.params.id, {
-      include: [{ model: prodact }],
+    const prodactData = await prodacts.findByPk(req.params.id, {
+      include: [{ model: prodacts }],
     });
 
     if (!prodactData) {
@@ -37,7 +37,7 @@ router.get('/:id', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
 
-    const locationData = await prodact.create({
+    const locationData = await prodacts.create({
       // prodact_id: req.body.prodact_id,
     });
     res.status(200).json(locationData);
@@ -49,7 +49,7 @@ router.post('/', async (req, res) => {
 // DELETE a prodact
 router.delete('/:id', async (req, res) => {
   try {
-    const prodactData = await prodact.destroy({
+    const prodactData = await prodacts.destroy({
       where: {
         id: req.params.id,
       },

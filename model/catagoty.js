@@ -13,7 +13,7 @@ Catagory.init(
     },
     
     Catagory_name: {
-      type: DataTypes,
+      type: DataTypes.STRING,
    
     },
    
@@ -23,7 +23,7 @@ Catagory.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'Catagory',
+    modelName: 'catagory',
   }
 );
 
