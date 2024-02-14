@@ -1,11 +1,10 @@
-const prodact = require('./prodact');
-const catagory = require('./catagoty');
-const tag = require('./tag');
-const prodactTag = require('./prodacTag');
+const prodact = require('./catagoty.js');
+const catagory = require('./catagoty.js');
+const tag = require('./tag.js');
+const prodactTag = require('./prodacTag.js');
 
 catagory.hasMany(prodact, {
-  foreignKey: 'id',
- 
+  foreignKey: 'catagory_id',
   onDelete: 'CASCADE',
 });
 
@@ -13,15 +12,13 @@ prodact.belongsTo(catagory, {
   foreignKey: 'catagory_id',
 });
 
-
-
 prodact.hasMany(prodactTag, {
   foreignKey: 'id',
   onDelete: 'CASCADE',
 });
 
 prodactTag.belongsTo(prodact, {
-  foreignKey: 'prodact_id',
+  foreignKey: 'prodatct_id',
 });
 
 tag.hasMany(prodactTag, {
@@ -33,4 +30,4 @@ prodactTag.belongsTo(tag, {
 })
 
 
-module.exports = { prodact, catagory};//,prodactTag,catagory };
+module.exports = { prodact, catagory, prodactTag,catagory };

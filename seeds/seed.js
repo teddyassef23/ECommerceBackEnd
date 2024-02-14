@@ -12,7 +12,7 @@ const seedDatabase = async () => {
   });
 
   for (const { id } of readers) {
-    const newCard = await catagory.create({
+    const newCatagory = await catagory.create({
       reader_id: id,
     });
   }
