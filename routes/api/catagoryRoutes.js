@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // use object destructuring to import our two models by name
-const { catagory, prodact } = require('../../models/index12');
+const { catagory, prodact } = require('../../models/index');
 
 // GET all catagory
 router.get('/', async (req, res) => {

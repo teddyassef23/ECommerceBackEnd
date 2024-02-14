@@ -1,6 +1,6 @@
 const router = require('express').Router();
 // use object destructuring to import our two models by name
-const { tag } = require('../../models/index12');
+const { tag } = require('../../models/index');
 
 // GET all tag
 router.get('/', async (req, res) => {
